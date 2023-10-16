@@ -1,0 +1,6 @@
+---
+  grafana_api_url:
+    description: "grafanaAPI URL"
+    type: "string"
+    default: "https://github.com"
+    required: true

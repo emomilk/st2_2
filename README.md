@@ -1,2 +1,2 @@
-# st2-github-training
-St2 Github Integration pack for StackStorm Training
+# grafana pack for stackstorm training
+Stackstorm pack containing workflows, actions and sensors for Grafanarelated tasks
