@@ -17,7 +17,8 @@ tasks:
     next:
       - when: <% succeeded() %>
         publish:
-          - message: "Stackstorm training file creation"
+          - message:  "{% if ctx().user == "bitovi" -%}Creating test file in bitovi org{%- else -%}}Creating test file in {{ ctx().user }} org{% endif %}"
+          - content: "Data by {{ ctx().user }} in {{ ctx().repo }} at {{ ctx().path }}"
         do: create_file
 
   parallel_test:     
@@ -34,6 +35,7 @@ tasks:
       user: <% ctx().user %>
       repo: <% ctx().repo %>
       path: <% ctx().path %>
+      content: <% ctx().content %>
       message: <% ctx().message %>
     next:
       - when: <% succeeded() %>
