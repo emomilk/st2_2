@@ -17,4 +17,4 @@ author: Bitovi
 # Email of the pack author.
 email: karamveer@bitovi.com
 dependencies:
-  - https://github.com/StackStorm-Exchange/stackstorm-grafana.git
+  - https://github.com/StackStorm-Exchange/stackstorm-github.git
