@@ -17,7 +17,7 @@ tasks:
     next:
       - when: <% succeeded() %>
         publish:
-          - message:  "{% if ctx().user == "bitovi" -%}Creating test file in bitovi org{%- else -%}}Creating test file in {{ ctx().user }} org{% endif %}"
+          - message:  "Training test"
           - content: "Data by {{ ctx().user }} in {{ ctx().repo }} at {{ ctx().path }}"
         do: create_file
 
