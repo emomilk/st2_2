@@ -1,1 +1,0 @@
-Data by bitovi in st2-github-training at test.md
