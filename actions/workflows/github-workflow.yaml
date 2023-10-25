@@ -1,3 +1,4 @@
+
 version: 1.0
 
 input:
@@ -28,7 +29,6 @@ tasks:
         publish:
           - parallel_run: "successful"
 
-# Search existing ticket in jira based on summary
   create_file:
     action: github.create_file
     input:
