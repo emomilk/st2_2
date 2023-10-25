@@ -3,44 +3,29 @@ version: 1.0
 
 input:
   - user
-  - repo
-  - path
 
 vars:
   - create_file: ""
 
 tasks:
-  notify:
-    action: core.echo
-    input:
-      message: |
-        Received data
-    next:
-      - when: <% succeeded() %>
-        publish:
-          - message:  "Training test"
-          - content: "Data by {{ ctx().user }} in {{ ctx().repo }} at {{ ctx().path }}"
-        do: create_file
-
-  parallel_test:     
+  publish_message:     
     action: core.noop
     next:
       - when: <% succeeded() %>
         publish:
-          - parallel_run: "successful"
+          - message: "Stackstorm training message has been sent by {{ ctx().user }} "
+        do: notify
 
-  create_file:
-    action: github.create_file
+  notify:
+    action: core.echo
     input:
-      user: <% ctx().user %>
-      repo: <% ctx().repo %>
-      path: <% ctx().path %>
-      content: <% ctx().content %>
-      message: <% ctx().message %>
+      message: |
+        "{{ ctx().message }}"
     next:
       - when: <% succeeded() %>
-        publish:
-          - create_file: "True"
+        do: create_file
 
-output:
-  - create_file: "<% ctx().create_file %>"
+  create_file:
+    action: core.local
+    input:
+      cmd: "sudo touch training.txt"

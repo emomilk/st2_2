@@ -7,13 +7,5 @@ enabled: true
 parameters:
   user:
     type: "string"
-    description: "User / organization name."
-    required: true
-  repo:
-    type: "string"
-    description: "Repository name."
-    required: true
-  path:
-    type: "string"
-    description: "Path of the file in the repository."
+    description: "User name."
     required: true

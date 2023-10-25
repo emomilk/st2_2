@@ -11,11 +11,9 @@ trigger:
 criteria:
   trigger.body.user:
     type: equals
-    pattern: "bitovi"
+    pattern: "Karam"
 
 action:
   ref: st2_github_training.github_workflow
   parameters:
     user: "{{ trigger.body.user }}"
-    path: "{{ trigger.body.path }}"
-    repo: "{{ trigger.body.repo }}"
