@@ -1,0 +1,19 @@
+---
+name: github_workflow
+description: Workflow for github pack training
+runner_type: orquesta
+entry_point: workflows/github-workflow.yaml
+enabled: true
+parameters:
+  user:
+    type: "string"
+    description: "User / organization name."
+    required: true
+  repo:
+    type: "string"
+    description: "Repository name."
+    required: true
+  path:
+    type: "string"
+    description: "Path of the file in the repository."
+    required: true

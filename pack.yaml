@@ -1,7 +1,7 @@
 ---
 # Pack reference. It can only contain lowercase letters, digits and underscores.
 # This attribute is only needed if "name" attribute contains special characters.
-ref: st2-grafana-training
+ref: st2_grafana_training
 # User-friendly pack name. If this attribute contains spaces or any other special characters, then
 # the "ref" attribute must also be specified (see above).
 name: ST2 Grafana Actions pack for stackstorm training

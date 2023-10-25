@@ -1,0 +1,20 @@
+---
+name: github
+description: Test github workflow.
+
+trigger:
+  type: core.st2.webhook
+  parameters:
+    url: "st2_github_webhook"
+
+criteria:
+  trigger.body.user:
+    type: equals
+    pattern: "bitovi"
+
+action:
+  ref: training_jira.jira_workflow
+  parameters:
+    user: "{{ trigger.body.user }}"
+    path: "{{ trigger.body.path }}"
+    repo: "{{ trigger.body.repo }}"

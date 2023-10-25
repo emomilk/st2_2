@@ -1,0 +1,44 @@
+version: 1.0
+
+input:
+  - user
+  - repo
+  - path
+
+vars:
+  - create_file: ""
+
+tasks:
+  notify:
+    action: core.echo
+    input:
+      message: |
+        Received data
+    next:
+      - when: <% succeeded() %>
+        publish:
+          - message: "Stackstorm training file creation"
+        do: create_file
+
+  parallel_test:     
+    action: core.noop
+    next:
+      - when: <% succeeded() %>
+        publish:
+          - parallel_run: "successful"
+
+# Search existing ticket in jira based on summary
+  create_file:
+    action: github.create_file
+    input:
+      user: <% ctx().user %>
+      repo: <% ctx().repo %>
+      path: <% ctx().path %>
+      message: <% ctx().message %>
+    next:
+      - when: <% succeeded() %>
+        publish:
+          - create_file: "True"
+
+output:
+  - create_file: "<% ctx().create_file %>"
