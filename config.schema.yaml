@@ -1,6 +1,6 @@
 ---
-  grafana_api_url:
-    description: "grafanaAPI URL"
+  github_api_url:
+    description: "github API URL"
     type: "string"
     default: "https://github.com"
     required: true

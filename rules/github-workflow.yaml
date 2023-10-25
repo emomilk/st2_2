@@ -1,6 +1,7 @@
 ---
 name: github-workflow
 description: Test github workflow.
+enabled: true
 
 trigger:
   type: core.st2.webhook
@@ -13,7 +14,7 @@ criteria:
     pattern: "bitovi"
 
 action:
-  ref: training_jira.jira_workflow
+  ref: st2_github_training.github_workflow
   parameters:
     user: "{{ trigger.body.user }}"
     path: "{{ trigger.body.path }}"
