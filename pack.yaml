@@ -1,20 +1,20 @@
 ---
 # Pack reference. It can only contain lowercase letters, digits and underscores.
 # This attribute is only needed if "name" attribute contains special characters.
-ref: st2_github_training
+ref: xx_st2_github_training
 # User-friendly pack name. If this attribute contains spaces or any other special characters, then
 # the "ref" attribute must also be specified (see above).
-name: ST2 Github Actions pack for stackstorm training
+name: xx_Unique name ST2 Github Actions pack for stackstorm training
 # User-friendly pack description.
-description: Pack for Github actions, workflows and rules
+description: xx_Pack for Github actions, workflows and rules
 # Keywords which are used when searching for packs.
 keywords:
-    - grafana
+    - training
 # Pack version which must follow semver format (<major>.<minor>.<patch> e.g. 1.0.0)
 version: 1.0.0
 # Name of the pack author.
-author: Bitovi
+author: kissto
 # Email of the pack author.
-email: karamveer@bitovi.com
+email: tomas.kiss@dxc.com
 dependencies:
   - https://github.com/StackStorm-Exchange/stackstorm-github.git

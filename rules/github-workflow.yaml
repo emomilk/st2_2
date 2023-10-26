@@ -11,10 +11,10 @@ trigger:
 criteria:
   trigger.body.user:
     type: equals
-    pattern: "bitovi"
+    pattern: "kissto"
 
 action:
-  ref: st2_github_training.github_workflow
+  ref: xx_st2_github_training.github_workflow
   parameters:
     user: "{{ trigger.body.user }}"
     path: "{{ trigger.body.path }}"
