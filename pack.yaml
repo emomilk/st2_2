@@ -4,9 +4,9 @@
 ref: xx_st2_github_training
 # User-friendly pack name. If this attribute contains spaces or any other special characters, then
 # the "ref" attribute must also be specified (see above).
-name: xx_Unique name ST2 Github Actions pack for stackstorm training
+name: xx ST2 Github Actions pack for stackstorm training
 # User-friendly pack description.
-description: xx_Pack for Github actions, workflows and rules
+description: xx Pack for Github actions, workflows and rules
 # Keywords which are used when searching for packs.
 keywords:
     - training
